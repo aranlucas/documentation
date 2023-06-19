@@ -26,13 +26,6 @@ export const MDXComponents: Components = {
   // img: ResponsiveImage,
   // Layout,
   SelectNav,
-  table(props) {
-    return (
-      <div className={tableStyles.tableWrapper}>
-        <table className={tableStyles.table} {...props} />
-      </div>
-    )
-  },
   Admonition,
   Popup,
   TypeText,

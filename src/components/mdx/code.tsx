@@ -1,3 +1,5 @@
+"use client"
+
 import { Highlight } from "prism-react-renderer"
 import { theme, lightTheme } from "./theme"
 import { useTheme } from "next-themes"

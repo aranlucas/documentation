@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { Animate } from "react-simple-animate"
 import styles from "./Popup.module.css"

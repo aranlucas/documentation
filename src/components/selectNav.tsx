@@ -1,3 +1,5 @@
+"use client"
+
 import styles from "./selectNav.module.css"
 import { useRouter } from "next/router"
 

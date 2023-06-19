@@ -1,3 +1,5 @@
+"use client"
+
 import { useRef } from "react"
 import ClipBoard from "../ClipBoard"
 import styles from "../CodeArea.module.css"
