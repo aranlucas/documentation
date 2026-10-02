@@ -58,6 +58,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "test:builder": "node --test tests/form-builder.test.cjs",
     "analyze": "cross-env ANALYZE=true next build",
     "build": "next build",
     "dev": "next dev",
