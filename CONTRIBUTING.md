@@ -2,6 +2,20 @@
 
 As the creators and maintainers of this project, we want to ensure that `react-hook-form` lives and continues to grow and evolve. We would like to encourage everyone to help and support this library by contributing.
 
+## Node.js runtime
+
+Use the Node.js 22 LTS version pinned in `.nvmrc`, which is also used by CI:
+
+```shellscript
+nvm install
+nvm use
+```
+
+Contentlayer's frontmatter dependency loads the security-patched ESTree converter
+with `require()`. This runtime supports
+[loading synchronous ES modules with `require()`](https://nodejs.org/api/modules.html#loading-ecmascript-modules-using-require),
+so the existing dependency security overrides can remain in place.
+
 ## Code contributions
 
 Here is a quick guide to doing code contributions to the library.
