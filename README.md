@@ -47,7 +47,4 @@ Use the URL printed by Portless if you have changed its proxy port, TLS, or TLD.
 Linked Git worktrees get a branch prefix, so each checkout has its own origin.
 The first HTTPS run can request local administrator permission to bind port 443,
 trust its development certificate, and synchronize local hostnames. Ctrl+C stops
-the child server and removes its route. The direct fallback below starts the
-server without the proxy.
-
-Use `pnpm dev:direct` for the existing `http://localhost:3000` workflow.
+the child server and removes its route.

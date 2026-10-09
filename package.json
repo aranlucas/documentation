@@ -61,7 +61,7 @@
     "test:builder": "node --test tests/form-builder.test.cjs",
     "analyze": "cross-env ANALYZE=true next build",
     "build": "next build",
-    "dev": "portless",
+    "dev": "portless run --name documentation next dev",
     "format": "prettier . --check",
     "format:fix": "prettier . --write",
     "lint": "next lint",
@@ -71,8 +71,7 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "typecheck:ci": "next build --no-lint && tsc --noEmit",
-    "prepare": "husky install",
-    "dev:direct": "next dev"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx,mdx,css,json}": [
@@ -90,9 +89,5 @@
       "yaml@>=2.0.0 <2.8.3": "2.8.3",
       "webpack@>=5.49.0 <5.104.1": "5.108.3"
     }
-  },
-  "portless": {
-    "name": "documentation",
-    "script": "dev:direct"
   }
 }
