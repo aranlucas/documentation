@@ -141,6 +141,9 @@ importers:
       lint-staged:
         specifier: ^13.3.0
         version: 13.3.0
+      portless:
+        specifier: 0.15.7
+        version: 0.15.7
       prettier:
         specifier: ^3.9.9
         version: 3.9.9
@@ -2973,6 +2976,12 @@ packages:
   pidtree@0.6.0:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
+    hasBin: true
+
+  portless@0.15.7:
+    resolution: {integrity: sha512-fffMnzfwU/0chJmOMmeAOjFouRsZUmdJagxdqE4DATLw83ssAnHX4BzvNqOI5vBgsuvWLX5ZLg63bzs7zdVFNw==}
+    engines: {node: '>=24'}
+    os: [darwin, linux, win32]
     hasBin: true
 
   possible-typed-array-names@1.1.0:
@@ -6938,6 +6947,8 @@ snapshots:
   picomatch@4.0.7: {}
 
   pidtree@0.6.0: {}
+
+  portless@0.15.7: {}
 
   possible-typed-array-names@1.1.0: {}
 
