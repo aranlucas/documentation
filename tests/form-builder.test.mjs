@@ -1,12 +1,12 @@
-const assert = require("node:assert/strict")
-const fs = require("node:fs")
-const path = require("node:path")
-const test = require("node:test")
-const vm = require("node:vm")
-const ts = require("typescript")
-const React = require("react")
-const { renderToStaticMarkup } = require("react-dom/server")
-const { useForm } = require("react-hook-form")
+import assert from "node:assert/strict"
+import fs from "node:fs"
+import path from "node:path"
+import vm from "node:vm"
+import React from "react"
+import { renderToStaticMarkup } from "react-dom/server"
+import { useForm } from "react-hook-form"
+import { test } from "vitest"
+import ts from "typescript"
 
 const sourceRoot = process.env.BUILDER_SOURCE_ROOT || process.cwd()
 

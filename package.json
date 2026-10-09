@@ -66,9 +66,6 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "test:node": "node --test tests/form-builder.test.cjs",
-    "test:all": "vitest run && npm run test:node",
-    "test:builder": "node --test tests/form-builder.test.cjs",
     "analyze": "cross-env ANALYZE=true next build",
     "build": "next build",
     "dev": "portless run next dev",

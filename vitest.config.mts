@@ -5,7 +5,25 @@ import { defineConfig } from "vitest/config"
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
-    environment: "jsdom",
-    include: ["tests/ui/**/*.test.tsx"],
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "node",
+          environment: "node",
+          include: ["tests/form-builder.test.mjs"],
+          globals: false,
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "browser",
+          environment: "jsdom",
+          include: ["tests/ui/**/*.test.tsx"],
+          globals: false,
+        },
+      },
+    ],
   },
 })
