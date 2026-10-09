@@ -13,3 +13,9 @@ test("admonition displays its title and content", () => {
   expect(screen.getByText("CHECK THIS")).toBeDefined()
   expect(screen.getByText("Your email address is invalid.")).toBeDefined()
 })
+
+test("admonition uses its type when no title is provided", () => {
+  render(<Admonition type="caution">Check before continuing.</Admonition>)
+
+  expect(screen.getByText("CAUTION")).toBeDefined()
+})
