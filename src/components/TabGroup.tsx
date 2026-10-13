@@ -20,9 +20,7 @@ const TabGroup = ({
         {buttonLabels.map((label, currentIndex) => (
           <button
             key={label}
-            style={{
-              ...(currentIndex === index ? { cursor: "default" } : {}),
-            }}
+            style={currentIndex === index ? { cursor: "default" } : {}}
             disabled={currentIndex === index}
             onClick={() => {
               setIndex(currentIndex)

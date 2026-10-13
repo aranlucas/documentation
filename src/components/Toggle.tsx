@@ -1,4 +1,5 @@
-import { CSSProperties, useEffect, useState } from "react"
+import type { CSSProperties } from "react"
+import { useEffect, useState } from "react"
 import styles from "./Toggle.module.css"
 import { useTheme } from "next-themes"
 

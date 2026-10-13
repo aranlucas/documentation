@@ -2,10 +2,13 @@ const preFix =
   "https://github.com/react-hook-form/documentation/edit/master/src/"
 
 const dataPreFix = "data/"
+
 const content = "content/"
 
 export const getEditLink = (pathname: string): string => {
-  if (!pathname) return ""
+  if (!pathname) {
+    return ""
+  }
 
   if (pathname === "/" || pathname === "") {
     return `${preFix}${dataPreFix}/home.tsx`
@@ -18,7 +21,8 @@ export const getEditLink = (pathname: string): string => {
   } else if (pathname.startsWith("/docs/") && pathname !== "/docs/") {
     // e.g. /docs/useform → content/docs/useform.mdx
     // e.g. /docs/useform/register → content/docs/useform/register.mdx
-    const docPath = pathname.substring(1)
+    const docPath = pathname.slice(1)
+
     return `${preFix}${content}${docPath}.mdx`
   } else if (pathname.includes("ts")) {
     return `${preFix}${content}ts.mdx`

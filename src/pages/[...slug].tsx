@@ -1,5 +1,6 @@
-import { allDocs, Doc } from "contentlayer/generated"
-import { GetStaticPaths, InferGetStaticPropsType } from "next"
+import type { Doc } from "contentlayer/generated"
+import { allDocs } from "contentlayer/generated"
+import type { GetStaticPaths, InferGetStaticPropsType } from "next"
 import { useMDXComponent } from "next-contentlayer/hooks"
 import Layout from "@/components/layout"
 import { MDXComponents } from "@/components/mdx/mdx"
@@ -9,16 +10,18 @@ import StarRepo from "@/components/StarRepo"
 import containerStyles from "@/styles/container.module.css"
 import typographyStyles from "@/styles/typography.module.css"
 import Menu from "@/components/Menu/Menu"
-import { Pages } from "@/types/types"
+import type { Pages } from "@/types/types"
 
 // Segments that are real, navigable pages but not their own contentlayer doc.
 const SEGMENT_LABEL_OVERRIDES: Record<string, string> = { docs: "API" }
 
 function getBreadcrumbSchema(doc: Doc) {
   let cumulativePath = ""
+
   const items = doc.segment.map((segment, index) => {
     cumulativePath += `/${segment}`
     const isLast = index === doc.segment.length - 1
+
     const name = isLast
       ? doc.title
       : (allDocs.find((d) => d.slug === cumulativePath)?.title ??

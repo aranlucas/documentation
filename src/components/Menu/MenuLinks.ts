@@ -1,4 +1,4 @@
-import { Pages } from "../../types/types"
+import type { Pages } from "../../types/types"
 
 export const advancedLinks: Pages = [
   {

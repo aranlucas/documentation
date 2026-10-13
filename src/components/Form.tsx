@@ -39,6 +39,7 @@ function Form({
   const { register, handleSubmit, watch, formState, reset } = methods
 
   const touched = Object.keys(formState.touchedFields)
+
   const {
     state: { formData },
   } = useStateMachine()
@@ -142,6 +143,7 @@ function Form({
                         // eslint-disable-next-line @typescript-eslint/no-unused-vars
                         (previous, [key, { ref, ...rest }]) => {
                           previous[key] = rest
+
                           return previous
                         },
                         {}

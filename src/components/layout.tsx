@@ -1,7 +1,8 @@
 import { Animate } from "react-simple-animate"
 import { getEditLink } from "./logic/getEditLink"
 import Nav from "./Nav"
-import { useEffect, useState, ReactNode } from "react"
+import type { ReactNode } from "react"
+import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 
 const Layout = ({ children }: { children: ReactNode }) => {
@@ -16,10 +17,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
       setShow(false)
     }
   }
+
   const editLink = getEditLink(router.asPath.split("#")[0])
 
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler, { passive: true })
+
     return () => {
       window.removeEventListener("scroll", scrollHandler)
     }

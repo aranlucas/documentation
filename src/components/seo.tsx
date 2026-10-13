@@ -2,10 +2,14 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 
 export const SITE_URL = "https://react-hook-form.com"
+
 const SITE_NAME = "React Hook Form"
+
 const DEFAULT_TITLE = "React Hook Form - Simple React forms validation"
+
 const DEFAULT_DESCRIPTION =
   "Performant, flexible and extensible forms with easy-to-use validation."
+
 const OG_IMAGE = `${SITE_URL}/images/react-hook-form-og.png`
 
 const organizationSchema = {

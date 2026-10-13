@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Animate, AnimateGroup } from "react-simple-animate"
-import { Control, useForm, useWatch } from "react-hook-form"
+import type { Control } from "react-hook-form"
+import { useForm, useWatch } from "react-hook-form"
 import containerStyles from "../styles/container.module.css"
 import formStyles from "./Form.module.css"
 import typographyStyles from "../styles/typography.module.css"
@@ -45,6 +46,7 @@ const WatchGroup = ({
   control: Control<WatchFormData>
 }) => {
   const [check, setChecked] = useState(checked)
+
   return (
     <div className={styles.watchGroup}>
       <input
@@ -66,7 +68,9 @@ const Watcher = ({ isPlayWatch }: { isPlayWatch: boolean }) => {
     if (!isPlayWatch) {
       return
     }
+
     let i = 0
+
     const timer = setInterval(() => {
       if (i > 12) {
         setValue(
@@ -94,6 +98,7 @@ const Watcher = ({ isPlayWatch }: { isPlayWatch: boolean }) => {
       if (i > 20) {
         clearTimeout(timer)
       }
+
       i++
     }, 200)
 

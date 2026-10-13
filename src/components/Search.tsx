@@ -25,7 +25,10 @@ const Search = ({
         .forEach((el) => el.remove())
       const wrapper = document.querySelector(".algolia-autocomplete")
       const wrapped = wrapper?.querySelector<HTMLElement>("#algolia-doc-search")
-      if (wrapper && wrapped) wrapper.replaceWith(wrapped)
+
+      if (wrapper && wrapped) {
+        wrapper.replaceWith(wrapped)
+      }
 
       window.docsearch?.({
         appId: "Z2CKVVT2QA",
@@ -42,7 +45,9 @@ const Search = ({
       const script = document.querySelector<HTMLScriptElement>(
         'script[src*="docsearch"]'
       )
+
       script?.addEventListener("load", initDocSearch)
+
       return () => script?.removeEventListener("load", initDocSearch)
     }
 

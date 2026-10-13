@@ -32,12 +32,14 @@ function generateField({
   const register = `{...register(${JSON.stringify(name)}${
     rules.length ? `, { ${rules.join(", ")} }` : ""
   })}`
+
   const values = (options || "").split(";").filter(Boolean)
 
   if (type === "select") {
     return `      <select ${register}>\n${values
       .map((option) => {
         const value = JSON.stringify(option)
+
         return `        <option value={${value}}>{${value}}</option>\n`
       })
       .join("")}      </select>\n`

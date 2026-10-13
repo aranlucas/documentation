@@ -9,6 +9,7 @@ const TypeText = ({
   pre: boolean
 }) => {
   const Element = pre ? "pre" : "span"
+
   return <Element className={typographyStyles.typeText}>{children}</Element>
 }
 

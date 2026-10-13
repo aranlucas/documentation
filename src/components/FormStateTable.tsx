@@ -1,5 +1,5 @@
 import generic from "../data/generic"
-import API from "../data/api"
+import type API from "../data/api"
 import typographyStyles from "../styles/typography.module.css"
 import tableStyles from "../styles/table.module.css"
 import { FormStateApi } from "./FormStateApi"
