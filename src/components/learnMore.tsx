@@ -6,6 +6,7 @@ import { useRouter } from "next/router"
 
 export default function LearnMore() {
   const router = useRouter()
+
   return (
     <div className={containerStyles.centerContent} style={{ marginTop: 100 }}>
       <h2 className={typographyStyles.ctaHeading}>{generic.learnMore.title}</h2>

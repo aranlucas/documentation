@@ -4,7 +4,8 @@ import home from "../data/home"
 import typographyStyles from "../styles/typography.module.css"
 import buttonStyles from "../styles/button.module.css"
 import styles from "./Header.module.css"
-import { useState, RefObject } from "react"
+import type { RefObject } from "react"
+import { useState } from "react"
 
 const LogoSvg = (
   <>

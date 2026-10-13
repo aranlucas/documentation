@@ -15,7 +15,7 @@ export const Pre = (
   const preRef = useRef<HTMLDivElement | null>(null)
 
   const language = isValidElement<{ className?: string }>(props.children)
-    ? props.children.props.className?.replace(/language-/gm, "") || ""
+    ? props.children.props.className?.replaceAll(/language-/gm, "") || ""
     : ""
 
   const isJs = language === "javascript"

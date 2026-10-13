@@ -5,7 +5,7 @@ import generic from "../data/generic"
 import type devToolsContent from "../data/devtools"
 import typographyStyles from "../styles/typography.module.css"
 import styles from "./DevToolFeaturesList.module.css"
-import { AnimateKeyframesProps } from "react-simple-animate/dist/types"
+import type { AnimateKeyframesProps } from "react-simple-animate/dist/types"
 
 const animationKeyFramesProps: AnimateKeyframesProps = {
   keyframes: [
@@ -88,8 +88,8 @@ const FeaturesList = ({ content }: Props) => {
           <article>
             <AnimateKeyframes {...animationKeyFramesProps} sequenceIndex={0}>
               <svg viewBox="0 0 110 110" fill="#fff">
-                <path d="M50,42.084c-4.372,0-7.916,3.544-7.916,7.916c0,3.81,2.693,6.99,6.279,7.744v42.214C48.908,99.976,49.451,100,50,100  s1.092-0.024,1.637-0.041V57.744c3.586-0.754,6.279-3.934,6.279-7.744C57.916,45.628,54.372,42.084,50,42.084z"></path>
-                <path d="M100,50c0-27.614-22.386-50-50-50S0,22.386,0,50c0,25.954,19.777,47.285,45.082,49.757l0,0l0.001-0.009h0  C44.958,79.426,32.708,63.73,27.626,58.087v-0.002c0,0-2.087-2.503-0.905-5.503l9.256-23.476c0,0,1.713-4.34,5.517-4.34H50h8.506  c3.805,0,5.517,4.34,5.517,4.34l9.256,23.476c1.183,3-0.905,5.503-0.905,5.503v0.002c-5.082,5.644-17.332,21.339-17.456,41.661  l0.001,0.009C80.224,97.285,100,75.954,100,50z"></path>
+                <path d="M50,42.084c-4.372,0-7.916,3.544-7.916,7.916c0,3.81,2.693,6.99,6.279,7.744v42.214C48.908,99.976,49.451,100,50,100  s1.092-0.024,1.637-0.041V57.744c3.586-0.754,6.279-3.934,6.279-7.744C57.916,45.628,54.372,42.084,50,42.084z" />
+                <path d="M100,50c0-27.614-22.386-50-50-50S0,22.386,0,50c0,25.954,19.777,47.285,45.082,49.757l0,0l0.001-0.009h0  C44.958,79.426,32.708,63.73,27.626,58.087v-0.002c0,0-2.087-2.503-0.905-5.503l9.256-23.476c0,0,1.713-4.34,5.517-4.34H50h8.506  c3.805,0,5.517,4.34,5.517,4.34l9.256,23.476c1.183,3-0.905,5.503-0.905,5.503v0.002c-5.082,5.644-17.332,21.339-17.456,41.661  l0.001,0.009C80.224,97.285,100,75.954,100,50z" />
               </svg>
             </AnimateKeyframes>
             <h3>{content.features[2].title}</h3>

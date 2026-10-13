@@ -31,8 +31,14 @@ export default function CodeArea({
   const [currentType, setType] = useState<
     (typeof ToggleTypes)[keyof typeof ToggleTypes]
   >(() => {
-    if (rawData) return ToggleTypes.js
-    if (tsRawData) return ToggleTypes.ts
+    if (rawData) {
+      return ToggleTypes.js
+    }
+
+    if (tsRawData) {
+      return ToggleTypes.ts
+    }
+
     return ToggleTypes.types
   })
 

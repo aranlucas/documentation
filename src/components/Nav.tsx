@@ -25,11 +25,13 @@ export default function Nav() {
   useEffect(() => {
     if (LARGE_SCREEN <= width) {
       setLang(true)
+
       return
     }
 
     if (isFocusOnSearch) {
       setLang(false)
+
       return
     }
 
@@ -293,7 +295,7 @@ export default function Nav() {
             }}
           >
             <div className={styles.iconWrapper}>
-              <div className="icon more"></div>
+              <div className="icon more" />
             </div>
             <span>More</span>
           </a>

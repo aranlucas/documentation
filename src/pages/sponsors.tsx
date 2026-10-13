@@ -78,13 +78,19 @@ const extractSection = (
   endMarkers: string[]
 ): string => {
   const startIdx = markdown.indexOf(startMarker)
-  if (startIdx === -1) return ""
+
+  if (startIdx === -1) {
+    return ""
+  }
 
   const from = startIdx + startMarker.length
   let endIdx = markdown.length
   endMarkers.forEach((marker) => {
     const idx = markdown.indexOf(marker, from)
-    if (idx !== -1 && idx < endIdx) endIdx = idx
+
+    if (idx !== -1 && idx < endIdx) {
+      endIdx = idx
+    }
   })
 
   return markdown.slice(from, endIdx)
@@ -102,6 +108,7 @@ const parseSponsorSection = (section: string): Sponsor[] => {
     .filter((line) => !/^\|[\s|:-]+\|$/.test(line))
 
   const sponsors: Sponsor[] = []
+
   for (let i = 0; i < rows.length; i += 2) {
     const nameCells = splitCells(rows[i] || "")
     const logoCells = splitCells(rows[i + 1] || "")
@@ -132,6 +139,7 @@ export const getStaticProps = async () => {
     const parsedMajor = parseSponsorSection(
       extractSection(markdown, "## Major Sponsors", ["## Supporting Sponsors"])
     )
+
     const parsedSupporting = parseSponsorSection(
       extractSection(markdown, "## Supporting Sponsors", [
         "### Past Sponsors",
@@ -139,8 +147,13 @@ export const getStaticProps = async () => {
       ])
     )
 
-    if (parsedMajor.length) majorSponsors = parsedMajor
-    if (parsedSupporting.length) supportingSponsors = parsedSupporting
+    if (parsedMajor.length) {
+      majorSponsors = parsedMajor
+    }
+
+    if (parsedSupporting.length) {
+      supportingSponsors = parsedSupporting
+    }
   } catch {}
 
   return {

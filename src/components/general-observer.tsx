@@ -1,11 +1,5 @@
-import {
-  FunctionComponent,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
-  ReactNode,
-} from "react"
+import type { FunctionComponent, RefObject, ReactNode } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface IGeneralObserverProps {
   /** React Children */
@@ -36,6 +30,7 @@ export const GeneralObserver: FunctionComponent<IGeneralObserverProps> = ({
         threshold: 0,
       }
     )
+
     if (ref.current) {
       observer.observe(ref.current)
     }

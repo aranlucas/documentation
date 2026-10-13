@@ -82,6 +82,7 @@ export default function SortableContainer({
                           const index = formData.findIndex(
                             (data) => field.name === data.name
                           )
+
                           reset(formData[index])
                           setFormData(formData[index])
                           setEditIndex(index)

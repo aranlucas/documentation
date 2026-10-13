@@ -5,7 +5,7 @@ import { YouTube } from "./youtube"
 import TypeText from "../TypeText"
 import Since from "../Since"
 import Popup from "../Popup"
-import { Components } from "@mdx-js/react/lib"
+import type { Components } from "@mdx-js/react/lib"
 import { Admonition } from "../Admonition"
 import { CodeSandBoxLink } from "../CodeSandbox"
 import tableStyles from "../../styles/table.module.css"
@@ -60,6 +60,6 @@ export const MDXComponents: Components = {
   },
   TabGroup,
   PrettyObject({ value }: { value: Record<string, unknown> }) {
-    return JSON.stringify(value, null, 2).replace(/"/g, "")
+    return JSON.stringify(value, null, 2).replaceAll('"', "")
   },
 }

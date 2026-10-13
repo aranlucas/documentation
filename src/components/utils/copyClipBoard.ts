@@ -8,7 +8,7 @@ export default function copyToClipboard(text: string) {
         const body = document.querySelector("body")
 
         const textarea = document.createElement("textarea")
-        body?.appendChild(textarea)
+        body?.append(textarea)
 
         textarea.value = text
         textarea.select()

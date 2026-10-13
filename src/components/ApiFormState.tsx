@@ -1,5 +1,5 @@
 import { memo } from "react"
-import API from "../data/api"
+import type API from "../data/api"
 import typographyStyles from "../styles/typography.module.css"
 import FormStateTable from "./FormStateTable"
 import TabGroup from "./TabGroup"

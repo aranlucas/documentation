@@ -8,7 +8,10 @@ function usePrismTheme() {
   const { theme } = useTheme()
 
   return useMemo(() => {
-    if (theme === "light") return lightTheme
+    if (theme === "light") {
+      return lightTheme
+    }
+
     return darkTheme
   }, [theme])
 }
@@ -20,7 +23,7 @@ export const PrismSyntaxHighlight = ({
   children: ReactNode
   className: string
 }) => {
-  const language = className.replace(/language-/gm, "")
+  const language = className.replaceAll(/language-/gm, "")
 
   const currentTheme = usePrismTheme()
 
@@ -46,6 +49,7 @@ export const PrismSyntaxHighlight = ({
                       token: lineToken,
                       key: linenTokenIndex,
                     })
+
                   return (
                     <span key={lineTokenKey as number} {...lineTokenProps} />
                   )

@@ -1,7 +1,9 @@
 "use client"
+
 import { useEffect, useRef } from "react"
 
 export const CARBON_SCRIPT_ID = "_carbonads_js"
+
 const CARBON_SCRIPT_SRC =
   "https://cdn.carbonads.com/carbon.js?serve=CW7DTKQ7&placement=react-hook-formcom&format=cover"
 
@@ -10,7 +12,9 @@ export function CarbonAds({ id }: { id: string }) {
 
   useEffect(() => {
     function injectScript() {
-      if (document.getElementById(id)) return
+      if (document.querySelector(`#${id}`)) {
+        return
+      }
 
       const script = document.createElement("script")
       script.id = id
@@ -19,7 +23,7 @@ export function CarbonAds({ id }: { id: string }) {
       script.type = "text/javascript"
 
       if (containerRef.current) {
-        containerRef.current.appendChild(script)
+        containerRef.current.append(script)
       }
     }
 

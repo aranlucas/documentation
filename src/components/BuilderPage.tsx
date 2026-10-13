@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, memo, RefObject } from "react"
+import type { RefObject } from "react"
+import { useState, useRef, useEffect, memo } from "react"
 import { useRouter } from "next/router"
 import { Animate } from "react-simple-animate"
 import { useForm } from "react-hook-form"
@@ -64,9 +65,12 @@ function BuilderPage({
       }
     },
   })
+
   const [editFormData, setEditFormData] = useState(defaultValue)
+
   const { register, handleSubmit, watch, setValue, reset, formState } =
     useForm<FormFieldDefinitionItem>()
+
   const errors = formState.errors
   const [editIndex, setEditIndex] = useState(-1)
   const copyFormData = useRef<GlobalState["formData"]>([])
@@ -75,19 +79,22 @@ function BuilderPage({
 
   const onSubmit: SubmitHandler<FormFieldDefinitionItem> = (data) => {
     toggleValidation(false)
+
     if (editIndex >= 0) {
       formData[editIndex] = data as FormDataItem
-      updateFormData([...formData.filter((formInput) => formInput)])
+      updateFormData(formData.filter((formInput) => formInput))
       setEditFormData(defaultValue)
       setEditIndex(-1)
     } else {
       updateFormData([...formData, data as FormDataItem])
     }
+
     reset()
   }
 
   const form = useRef<HTMLHeadingElement>(null)
   const type = watch("type")
+
   const shouldToggleOn =
     !!editFormData.max ||
     !!editFormData.min ||
@@ -95,6 +102,7 @@ function BuilderPage({
     !!editFormData.maxLength ||
     !!editFormData.minLength ||
     editFormData.required
+
   copyFormData.current = formData
   const editIndexRef = useRef<number | null>(null)
   editIndexRef.current = editIndex
@@ -119,7 +127,9 @@ function BuilderPage({
   }, [setValue, shouldToggleOn])
 
   useEffect(() => {
-    if (editFormData.type) setValue("type", editFormData.type)
+    if (editFormData.type) {
+      setValue("type", editFormData.type)
+    }
   }, [editFormData.type, setValue])
 
   useEffect(() => {
@@ -418,7 +428,9 @@ function BuilderPage({
     </div>
   )
 
-  if (isStatic) return child
+  if (isStatic) {
+    return child
+  }
 
   return (
     <Animate

@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next"
+import type { GetServerSideProps } from "next"
 import { allDocs } from "contentlayer/generated"
 import { SITE_URL } from "@/components/seo"
 

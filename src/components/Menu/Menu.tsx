@@ -3,7 +3,7 @@ import colors from "../../styles/colors"
 import styles from "./SideMenu.module.css"
 import typographyStyles from "../../styles/typography.module.css"
 import { useRouter } from "next/router"
-import { Pages } from "../../types/types"
+import type { Pages } from "../../types/types"
 import { CARBON_SCRIPT_ID, CarbonAds } from "@/components/CarbonAds"
 
 function Menu({ pages = [] }: { pages: Pages }) {

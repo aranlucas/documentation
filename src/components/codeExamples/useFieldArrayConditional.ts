@@ -22,10 +22,10 @@ const ConditionField = ({
   return (
     <>
       {output[index]?.name === "bill" && (
-        <input {...register(\`data[$\{index\}].conditional\`)} />
+        <input {...register(\`data[$\{index}].conditional\`)} />
       )}
       <input
-        {...register(\`data[$\{index\}].easyConditional\`)}
+        {...register(\`data[$\{index}].easyConditional\`)}
         style={{ display: output[index]?.name === "bill" ? "block" : "none" }}
       />
     </>
@@ -50,7 +50,7 @@ const UseFieldArrayUnregister: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       {fields.map((data, index) => (
         <>
-          <input {...register(\`data[$\{index\}].name\`)} />
+          <input {...register(\`data[$\{index}].name\`)} />
           <ConditionField control={control} register={register} index={index} />
         </>
       ))}

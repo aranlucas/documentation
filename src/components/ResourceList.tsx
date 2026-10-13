@@ -27,20 +27,25 @@ export default function ResourceList({
   const { register, watch } = useForm<ResourceListFormData>({
     mode: "onChange",
   })
+
   const [layout, setLayout] = useState("grid")
 
   const isGridLayout = layout === "grid"
 
   const filtered = resources.reduce<Resource[]>((acc, cur) => {
     const { title, author, description, version } = cur
+
     // case insensitive filter
     if (
-      `${title} ${author ?? ""} ${description ?? ""} ${
-        version ? `v${version}` : ""
-      }`.match(new RegExp(watch("filterResources"), "i"))
+      new RegExp(watch("filterResources"), "i").test(
+        `${title} ${author ?? ""} ${description ?? ""} ${
+          version ? `v${version}` : ""
+        }`
+      )
     ) {
       acc.push(cur)
     }
+
     return acc
   }, [])
 

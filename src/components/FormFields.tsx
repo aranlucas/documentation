@@ -13,9 +13,11 @@ function getNumericValidationFor<
   TKey extends "maxLength" | "minLength" | "min" | "max",
 >(name: TKey, value: string): Record<TKey, number> | null {
   const number = parseInt(value, 10)
+
   if (typeof number === "number" && !Number.isNaN(number)) {
     return { [name]: number } as Record<TKey, number>
   }
+
   return null
 }
 
