@@ -31,9 +31,7 @@ export const Pre = (
           <ClipBoard
             className={`${styles.button} ${styles.copyButton}`}
             onClick={() => {
-              if (preRef.current?.innerText) {
-                copyClipBoard(preRef.current.innerText)
-              }
+              return copyClipBoard(preRef.current?.innerText || "")
             }}
           />
         )}

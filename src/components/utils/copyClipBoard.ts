@@ -1,26 +1,19 @@
-export default function copyToClipboard(text: string) {
-  return new Promise((resolve, reject) => {
-    if (navigator?.clipboard) {
-      const cb = navigator.clipboard
-      cb.writeText(text).then(resolve).catch(reject)
-    } else {
-      try {
-        const body = document.querySelector("body")
+export default async function copyToClipboard(text: string): Promise<void> {
+  if (navigator.clipboard) {
+    await navigator.clipboard.writeText(text)
+    return
+  }
 
-        const textarea = document.createElement("textarea")
-        body?.append(textarea)
+  const textarea = document.createElement("textarea")
+  textarea.value = text
+  document.body.append(textarea)
 
-        textarea.value = text
-        textarea.select()
-
-        document.execCommand("copy")
-
-        body?.removeChild(textarea)
-
-        resolve(0)
-      } catch (e) {
-        reject(e instanceof Error ? e : new Error(String(e)))
-      }
+  try {
+    textarea.select()
+    if (!document.execCommand("copy")) {
+      throw new Error("Copying to the clipboard was refused.")
     }
-  })
+  } finally {
+    textarea.remove()
+  }
 }

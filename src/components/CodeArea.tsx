@@ -91,7 +91,7 @@ export default function CodeArea({
           <ClipBoard
             className={`${styles.button} ${styles.copyButton}`}
             onClick={() => {
-              copyClipBoard(codeAreaRef.current?.innerText || "")
+              return copyClipBoard(codeAreaRef.current?.innerText || "")
             }}
           />
         )}
