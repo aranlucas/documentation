@@ -407,7 +407,7 @@ function BuilderPage({
             <div className={styles.buttonWrapper}>
               <ClipBoard
                 onClick={() => {
-                  copyClipBoard(generateCode(formData))
+                  return copyClipBoard(generateCode(formData))
                 }}
                 className={`${styles.button} ${styles.copyButton}`}
               />

@@ -48,6 +48,14 @@ Here is a quick guide to doing code contributions to the library.
 
 8. Choose a descriptive title and describe your changes briefly.
 
+## Run the regression tests
+
+```shellscript
+pnpm exec vitest run
+```
+
+This exits after the Node form-builder tests and jsdom component tests finish. `pnpm test` without `run` watches for changes. The form-builder suite executes generated forms and validation rules; browser tests cover rendered admonitions and clipboard success, rejection, retry, and fallback cleanup. These tests do not require a running Next.js server.
+
 ## Testing production build
 
 To test the documentation production site on your local machine,

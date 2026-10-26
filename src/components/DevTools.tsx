@@ -85,7 +85,7 @@ export default function DevTools() {
             <ClipBoard
               className={getStartedStyle.copyButton}
               onClick={() => {
-                copyClipBoard("npm install -D @hookform/devtools")
+                return copyClipBoard("npm install -D @hookform/devtools")
               }}
             />
           </pre>
